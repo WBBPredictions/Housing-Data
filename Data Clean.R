@@ -1,11 +1,11 @@
 library(readr)
 library(PCAmixdata)
 library(FactoMineR)
-train <- read.csv("~/Desktop/Projects/Trav + Keven/train.csv")
+train <- read.csv(file.choose(), header = T)
 SP <- train$SalePrice
 dat <- train[,-c(1)]
 dat <- dat[, -80]
-#View(dat)
+View(dat)
 
 
 
@@ -170,7 +170,7 @@ dat$KitchenQual <- as.integer(dat$KitchenQual)
 dat$FireplaceQu <- as.integer(dat$FireplaceQu)
 dat$GarageQual <- as.integer(dat$GarageQual)
 
-View(dat)
+#View(dat)
 X.quanti <- splitmix(dat)$X.quanti
 View(X.quanti)
 
